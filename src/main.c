@@ -810,7 +810,7 @@ uint32 g_asset_sizes[kNumberOfAssets];
 
 static void LoadAssets() {
   size_t length = 0;
-  uint8 *data = ReadWholeFile("zelda3_assets.dat", &length);
+  uint8 *data = ReadWholeFile(g_config.assets, &length);
   if (!data) {
     size_t bps_length, bps_src_length;
     uint8 *bps, *bps_src;

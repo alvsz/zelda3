@@ -405,6 +405,9 @@ static bool HandleIniConfig(int section, const char *key, char *value) {
       return true;
     } else if (StringEqualsNoCase(key, "ResumeMSU")) {
       return ParseBool(value, &g_config.resume_msu);
+    } else if (StringEqualsNoCase(key, "Assets")) {
+      g_config.assets = *value ? value : NULL;
+      return true;
     }
   } else if (section == 3) {
     if (StringEqualsNoCase(key, "Autosave")) {

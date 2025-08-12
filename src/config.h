@@ -74,6 +74,7 @@ typedef struct Config {
   const char *shader;
   const char *msu_path;
   const char *language;
+  const char *assets;
 } Config;
 
 enum {
