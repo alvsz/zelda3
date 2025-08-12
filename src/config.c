@@ -405,9 +405,6 @@ static bool HandleIniConfig(int section, const char *key, char *value) {
       return true;
     } else if (StringEqualsNoCase(key, "ResumeMSU")) {
       return ParseBool(value, &g_config.resume_msu);
-    } else if (StringEqualsNoCase(key, "Assets")) {
-      g_config.assets = *value ? value : NULL;
-      return true;
     }
   } else if (section == 3) {
     if (StringEqualsNoCase(key, "Autosave")) {
@@ -447,6 +444,9 @@ static bool HandleIniConfig(int section, const char *key, char *value) {
       return ParseBool(value, &g_config.disable_frame_delay);
     } else if (StringEqualsNoCase(key, "Language")) {
       g_config.language = value;
+      return true;
+    } else if (StringEqualsNoCase(key, "Assets")) {
+      g_config.assets = *value ? value : NULL;
       return true;
     }
   } else if (section == 4) {
